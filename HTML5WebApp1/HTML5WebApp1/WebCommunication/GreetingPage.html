@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Greeting Page</title>
+    <script>
+        function SendMessage() {
+            var name = document.getElementById("NameTextBox").value;
+            var frame = document.getElementById("HelloReceiverFrame");
+            frame.contentWindow.postMessage(name, "http://localhost:35068")
+        }
+    </script>
+</head>
+<body>
+    <section>
+        Name : <input type="text" id="NameTextBox" value="Archie" />&nbsp;
+        <input type="button" id="sendMessageButton" value="send Message" onclick="SendMessage()" />
+    </section>
+    <section>
+        <iframe id="HelloReceiverFrame" src="HelloPage.html" height="200" width="400">
+            
+        </iframe>
+    </section>
+
+</body>
+</html>

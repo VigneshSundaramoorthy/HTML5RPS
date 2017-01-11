@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Hello Page</title>
+    <script>
+        addEventListener("message", GetGreetingData, false);
+        function GetGreetingData(args) {
+            document.getElementById("DataTextBox").value = args.data;
+            document.getElementById("OriginTextBox").value = args.origin;
+        }
+    </script>
+</head>
+<body>
+    <section>
+        Data Received : <input type="text" id="DataTextBox" /><br />
+        Data Origin : <input type="text" id="OriginTextBox" /><br />
+    </section>
+
+</body>
+</html>
