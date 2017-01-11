@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Random Words Page</title>
+    <script>
+        var _worker;
+        function StartWorking() {
+            if (typeof (Worker) != undefined) {
+                _worker = new Worker("RandomWords.js");
+                _worker.onmessage = function (event) {
+                    document.getElementById("random").innerHTML = event.data;
+                }
+            }
+            else {
+                document.getElementById("random").innerHTML = "This browser does not support Worker....";
+            }
+        }
+        function StopWorking() {
+            _worker.terminate();
+        }
+    </script>
+</head>
+<body>
+    <input type="button" name="GoButton" value="Go" onclick="StartWorking()" />
+    &nbsp;
+    <input type="button" name="StopButton" value="Stop" onclick="StopWorking()" />
+    <p>
+        Here is your Random Word : <span id="random"></span>
+    </p>
+    <p>
+        PUt your text here, TextBox <input type="text" name="nametextbox" width="120" />
+    </p>
+</body>
+</html>
