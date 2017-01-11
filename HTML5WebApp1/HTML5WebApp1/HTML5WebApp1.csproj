@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2BA21189-C492-45C2-963E-2D8E139D1956}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HTML5WebApp1</RootNamespace>
+    <AssemblyName>HTML5WebApp1</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.WebSockets, Version=0.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WebSockets.0.2.3.1\lib\net45\Microsoft.WebSockets.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Cache\DateTimeDemo.js" />
+    <Content Include="Content\_jquery.textshadow.scss" />
+    <Content Include="Cache\DateTimeCache.manifest" />
+    <Content Include="Cache\TestManifest.manifest" />
+    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Content\jquery.textshadow.css" />
+    <Content Include="DB\ProductPage.html" />
+    <Content Include="DB\ProductService.svc" />
+    <Content Include="DragAndDrop\DragDropPage.html" />
+    <Content Include="GeoLocation\GeoLocationPage.html" />
+    <Content Include="ModernizerPolyFill\ModernizerTextShadowPage.html" />
+    <Content Include="OfflineCaching\CachingPage.html" />
+    <Content Include="OfflineCaching\TestManifestPage.html" />
+    <Content Include="OfflineStorage\StoragePage.html" />
+    <Content Include="OfflineStorage\WebSqlPage.html" />
+    <Content Include="Scripts\jquery-3.1.1.js" />
+    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <Content Include="packages.config" />
+    <Content Include="Video\AntenaWheels.ogg" />
+    <Content Include="Video\Bike.webm" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="WebSockets\Index.html" />
+    <Content Include="WebSockets\WebSocketServer1.ashx" />
+    <Content Include="WebSockets\WebSocketServer2.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\AnimationCSS.css" />
+    <Content Include="Content\StyleCSS3.css" />
+    <Content Include="Drawing\CanvasPage.html" />
+    <Content Include="Drawing\SVGPage.html" />
+    <Content Include="HTML5FormTags\Html5FormPage.html" />
+    <Content Include="Images\BEE1.GIF" />
+    <Content Include="Images\border.png" />
+    <Content Include="Images\Mickey.gif" />
+    <Content Include="Images\nexus-6-product-photo.jpg" />
+    <Content Include="Images\Nexus4Three.jpg" />
+    <Content Include="Images\SleepWithBook.gif" />
+    <Content Include="Images\Wink.gif" />
+    <Content Include="PageStructure\AndroidPage.html" />
+    <Content Include="Scripts\jquery.textshadow.js" />
+    <Content Include="Scripts\modernizr-custom.js" />
+    <Content Include="StyleCSS3\AnimationPage.html" />
+    <Content Include="StyleCSS3\StyleCSS3Page.html" />
+    <Content Include="Video\Bike.mp4" />
+    <Content Include="Video\VideoPlayerPage.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DB\IProductService.cs" />
+    <Compile Include="DB\Product.cs" />
+    <Compile Include="DB\ProductSvc.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebSockets\MicrosoftWebSocket.cs" />
+    <Compile Include="WebSockets\WebSocketServer1.ashx.cs">
+      <DependentUpon>WebSocketServer1.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSockets\WebSocketServer2.ashx.cs">
+      <DependentUpon>WebSocketServer2.ashx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>35068</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:35068/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

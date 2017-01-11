@@ -1,0 +1,39 @@
+﻿td{
+    border:1px solid brown;
+
+}
+@keyframes colorChange{
+    from{
+        background: red;
+    }
+    to{
+        background: yellow;
+    }
+}
+
+.colorChangeDiv{
+    background: red;
+    animation: colorChange 5s infinite;
+}
+
+@keyframes colorChangeShade{
+    0% {background:red;}
+    25% {background:blue;}
+    50% {background:green;}
+    75% {background:yellow;}
+    100% {background:cyan;}    
+}
+
+.colorChangeShadeDiv{
+    background:gold;
+    animation: colorChangeShade 5s infinite;
+}
+.divHover{
+    width:100px;
+    height:100px;
+    background:cornflowerblue;
+    transition:width 3s;
+}
+.divHover:hover{
+    width: 300px;
+}

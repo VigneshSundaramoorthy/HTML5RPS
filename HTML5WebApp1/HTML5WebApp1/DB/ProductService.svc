@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Service="HTML5WebApp1.DB.ProductSvc" %>

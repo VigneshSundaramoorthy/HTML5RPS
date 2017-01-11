@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>GeoLocation</title>
+    <script src="../Scripts/jquery-3.1.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            if (navigator.geolocation) {
+                $("#MessageDiv").html("<h1>This browser supports GeoLocation...</h1>");
+                navigator.geolocation.getCurrentPosition(GeoSuccess, GeoFailed);
+            }
+            else {
+                $("#MessageDiv").html("<h1>This browser does not support GeoLocation...</h1>");                
+            }
+        });
+        function GeoFailed(error) {
+            if (error.code == 1) {
+                $("#MessageDiv").html("<h4>Please enable your browser to allow your location to be used...</h4>");
+            }
+        }
+
+        function GeoSuccess(position) {
+            $("#YourPositionDiv").html("<h4>Latitude Position: " + position.coords.latitude + "<h4>")
+                                   .append("<h4> Longitude Position: " + position.coords.longitude + "</h4>")
+                                   .append("<h4> Accuracy: " + position.coords.accuracy + "</h4>")
+                                   .append("<h4> Altitude: " + position.coords.altitude + "</h4>");
+
+            var loccoord = position.coords.latitude + "," + position.coords.longitude;
+            //document.location = "http://maps.google.com/maps?q=" + loccoord;
+        }
+
+    </script>
+</head>
+<body>
+    <div id="MessageDiv"></div>
+    <div id="YourPositionDiv"></div>
+</body>
+</html>

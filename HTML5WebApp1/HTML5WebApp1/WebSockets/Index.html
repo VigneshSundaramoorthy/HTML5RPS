@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Index Page</title>
+    <script>
+        var _ws;
+        function $(id) {
+            return document.getElementById(id);
+        }
+        function wireEvents() {
+            $("send").addEventListener("click",function(){
+                var message = $("message");
+                _ws.send(message.value);
+                message.value = "";
+
+            }, false);
+
+            $("close").addEventListener("click", function () {
+                _ws.close();
+            }, false);
+        }
+
+        function createSpan(text) {
+            var span = document.createElement("span");
+            span.innerHTML = text + "<br/>"
+            return span;
+        }
+
+        window.onload = function () {
+            wireEvents();
+            var conversation = $("conversation");
+            //var url = "ws://localhost:35068/WebSockets/WebSocketServer1.ashx";
+            var url = "ws://localhost:35068/WebSockets/WebSocketServer2.ashx?chatName=Bot";
+
+            _ws = new WebSocket(url);
+            _ws.onerror = function (e) {
+                conversation.appendChild(createSpan("problem with Connection :" + e.message));
+            }
+
+
+
+            _ws.onopen = function () {
+                conversation.innerHTML = "Client Connected...<br/>";
+            }
+
+            _ws.onmessage = function (e) {
+                conversation.appendChild(createSpan(e.data.toString()));
+            }
+
+            _ws.onclose = function () {
+                conversation.innerHTML = "Connection Closed...";
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <h1>
+        Using WebSocket
+    </h1>
+    <input id="message" type="text"/>
+    <input id="send" type="button" value="Send" />
+    <input id="close" type="button" value="Close Connection" />
+    <br />
+    <div id="conversation">
+
+    </div>
+
+</body>
+</html>

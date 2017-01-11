@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Product Page</title>
+    <script src="../Scripts/jquery-3.1.1.js"></script>
+    <script>
+        $(function () {
+            $("#btnGetProduct").click(function () {
+
+                $.ajax({
+                    type: "GET",
+                    contentType: "application/json",
+                    dataType: "json",
+                    data: {},
+                    url: "../DB/ProductService.svc/product/" + $("#txtProductID").val(),
+                    success: function (result) {
+                        $("#ProductInfoDiv").html("<br/>ProductID: " + result.ProductID)
+                        .append("<br/>Product Name: " + result.ProductName)
+                        .append("<br/>Product Price: " + result.UnitPrice)
+
+                    },
+                    error: function (result) {
+                        alert(result.error)
+                    }
+                })
+
+            });               
+        });
+    </script>
+</head>
+<body>
+    <p>
+        ProductID : &nbsp; <input type="text" id="txtProductID" placeholder="Enter Product ID" /><br />
+        <input type="button" id="btnGetProduct" value="Get Product" /><br />
+    </p>
+    <hr />
+    <div id="ProductInfoDiv">
+
+    </div>
+</body>
+</html>

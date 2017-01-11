@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Form Page</title>
+</head>
+<body>
+    <form method="post" id="hForm" action="\">
+
+        <datalist id="PhoneTemplate">
+            <option value="Nexus4"></option>
+            <option value="Pixel"></option>
+            <option value="Galaxy"></option>
+            <option value="Oneplus"></option>
+            <option value="Moto"></option>            
+        </datalist>
+        <fieldset>
+            <legend>All the HTMl form features...</legend>
+            <label id="lblName">Name:</label>
+            <input type="text" id="txtName" required="required" placeholder="Enter the name here" /><br />
+
+            <label id="lblEmail">Email:</label>
+            <input type="email" id="txtEmail" required="required" placeholder="Email Address" /><br />
+
+            <label id="lblBlogAddress">Blog Address:</label>
+            <input type="url" id="txtBlogAddress"  placeholder="Blog Address" /><br />
+
+            <label id="lblAge">Blog Address:</label>
+            <input type="number" id="txtAge" placeholder="Enter the Age" min="8" max="80" step="1" value="18" /><br />
+
+            <label id="lblPhone">Mobile :</label>
+            <input type="tel" id="txtPhone" title="xxx-xxxx-xxx" pattern="\d{3}-\d{4}-\d{3}" /><br />
+
+            <label id="lblGettingUp">Getting Up Time : </label>
+            <input type="range" id="txtGettingUp" step="1" min="6" max="11" value="=7" onchange="GettingUpOutput.Value"/>&nbsp;<br />
+            <output name="GettingUpOutput">7</output>
+
+            <label>Color :</label>
+            <input type="color" value="red" /><br />
+
+            <label>Time :</label>
+            <input type="time" />
+
+            <label>Phone :</label>
+            <input type="text" id="txtPhoneListBox" list="PhoneTemplate" /><br />
+
+            <input type="submit" value="Submit" />
+        </fieldset>
+
+    </form>
+</body>
+</html>

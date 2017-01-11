@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Drag And Drop</title>
+    <style>
+        #div1,#div2{
+            float: left; width:120px; height:120px;margin:10px; padding:10px; 
+            border:1px solid black;
+        }
+    </style>
+    <script>
+        function allowDrop(e) {
+            e.preventDefault();
+        }
+        function drag(e) {
+            e.dataTransfer.setData("Text", e.target.id);
+        }
+        function drop(e) {
+            e.preventDefault();
+            var data = e.dataTransfer.getData("Text");
+            e.target.appendChild(document.getElementById(data));
+        }
+    </script>
+</head>
+<body>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="../Images/Mickey.gif" id="mickeyImage" height="100" width="100"
+             draggable="true" ondragstart="drag(event)" />
+    </div>
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+    </div>
+
+</body>
+</html>

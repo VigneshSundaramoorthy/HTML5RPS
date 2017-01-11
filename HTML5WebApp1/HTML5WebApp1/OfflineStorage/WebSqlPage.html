@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Web Sql</title>
+    <script>
+        function CreateDB() {
+
+            var request = indexedDB.open("library");
+
+            request.onsuccess = function () {
+                var db = request.result;
+                var store = db.createObjectStore("books", { keyPath: "isbn" });
+                var titleIndex = store.createIndex("by_title", "title", { unique: true });
+                var authorIndex = store.createIndex("by_author", "author");
+
+                // Populate with initial data.
+                store.put({ title: "Quarry Memories", author: "Fred", isbn: 123456 });
+                store.put({ title: "Water Buffaloes", author: "Fred", isbn: 234567 });
+                store.put({ title: "Bedrock Nights", author: "Barney", isbn: 345678 });
+
+                alert("DB Created...")
+            }
+                // The database did not previously exist, so create object stores and indexes.
+                
+            
+
+            
+
+            
+        }
+    </script>
+</head>
+<body>
+    <input type="button" name="BtnCreateDatabase" value="Create Database" onclick="CreateDB(); return false;" /><br />
+    <input type="button" name="BtnReadData" value="Read Data" onclick="ReadDB(); return false;" /><br />
+    <div id="EmpDetailsDiv">
+
+    </div>
+
+</body>
+</html>

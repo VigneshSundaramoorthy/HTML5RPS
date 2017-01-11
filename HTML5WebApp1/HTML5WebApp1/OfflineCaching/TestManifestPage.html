@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html manifest="../Cache/TestManifest.manifest">
+<head>
+    <title>Test Manifest Page</title>
+    <script>
+        function Init() {
+
+            var appCache = window.applicationCache;
+
+            appCache.addEventListener("checking", function (e) {
+                document.writeln("Checking for application update<hr/>");
+            }, false)
+
+            appCache.addEventListener("cached", function (e) {
+                document.writeln("Application, no update found<hr/>");
+            }, false)
+
+            appCache.addEventListener("obsolete", function (e) {
+                document.writeln("Application is obsolete<hr/>");
+            }, false)
+
+            appCache.addEventListener("error", function (e) {
+                document.writeln("Application cache error<hr/>");
+            }, false)
+
+            appCache.addEventListener("downloading", function (e) {
+                document.writeln("Application cache downloading/updating<hr/>");
+            }, false)
+
+            appCache.addEventListener("progress", function (e) {
+                document.writeln("Application cache in progress<hr/>");
+            }, false)
+
+            appCache.addEventListener("updateready", function (e) {
+                document.writeln("Application cache is ready<hr/>");
+            }, false)
+        }
+    </script>
+</head>
+<body onload="Init(); return false;">
+
+</body>
+</html>

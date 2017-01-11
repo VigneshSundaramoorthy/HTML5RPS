@@ -1,0 +1,81 @@
+﻿.blueBorder{
+    border: 2px solid red;
+}
+
+hr{
+    height:12px;
+    color:aqua;
+    background-color:orangered;
+}
+td{
+    border: 1px solid brown;
+}
+.generalDiv{
+    width:100px;
+    height:75px;
+    text-align: center;
+    background-color:cornflowerblue;
+    border:2px solid yellow;
+    vertical-align: middle;
+}
+#div1{
+    -moz-transform: rotate(30deg);
+    -o-transform: rotate(30deg);
+    -webkit-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    transform:rotate(30deg);
+}
+.textShadow{
+    text-shadow:2px 3px 2px 3px red;
+}
+
+.roundedBorder{
+    border: 2px solid red;
+    border-radius: 25px;
+    padding:4px;
+}
+.shadowBox{
+    background-color:burlywood;
+    box-shadow:10px 10px 5px yellow;
+}
+
+.borderImageRound{
+    border: 15px solid transparent;
+    padding: 10px 20px;
+    width: 150px;
+    -o-border-image: url(../Images/border.png) 30 30 round;
+    border-image: url(../Images/border.png) 30 30 round;
+}
+
+.borderImageStretch{
+    border: 15px solid transparent;
+    padding: 10px 20px;
+    width: 150px;
+    -o-border-image: url(../Images/border.png) 30 30 stretch;
+    border-image: url(../Images/border.png) 30 30 stretch;
+}
+.backgroundImge{
+    background:url(../Images/Mickey.gif);
+    background-size: 80%;
+    background-repeat: no-repeat;
+}
+.backimae, .backgroundWithBorderBox, .backgroundWithContentBox{
+    background-repeat: no-repeat;
+    background-position: right;
+    border: 2px solid black;
+    padding: 35px ;
+    background-size: 15%;
+    background-image: url(../Images/BEE1.GIF)
+}
+.backgroundWithBorderBox{
+    background-origin: border-box;
+}
+.backgroundWithContentBox{
+    background-origin: content-box;
+}
+
+.threeColumnEffect{
+    column-count:3;
+    column-gap:40px;
+    column-rule:2px solid purple;
+}

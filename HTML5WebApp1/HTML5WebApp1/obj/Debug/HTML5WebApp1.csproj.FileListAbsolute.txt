@@ -1,0 +1,7 @@
+c:\users\rpsch\documents\visual studio 2013\Projects\HTML5WebApp1\HTML5WebApp1\bin\HTML5WebApp1.dll.config
+c:\users\rpsch\documents\visual studio 2013\Projects\HTML5WebApp1\HTML5WebApp1\bin\HTML5WebApp1.dll
+c:\users\rpsch\documents\visual studio 2013\Projects\HTML5WebApp1\HTML5WebApp1\bin\HTML5WebApp1.pdb
+c:\users\rpsch\documents\visual studio 2013\Projects\HTML5WebApp1\HTML5WebApp1\obj\Debug\HTML5WebApp1.dll
+c:\users\rpsch\documents\visual studio 2013\Projects\HTML5WebApp1\HTML5WebApp1\obj\Debug\HTML5WebApp1.pdb
+C:\Users\RPSCH\documents\visual studio 2013\Projects\HTML5WebApp1\HTML5WebApp1\obj\Debug\HTML5WebApp1.csprojResolveAssemblyReference.cache
+C:\Users\RPSCH\documents\visual studio 2013\Projects\HTML5WebApp1\HTML5WebApp1\bin\Microsoft.WebSockets.dll

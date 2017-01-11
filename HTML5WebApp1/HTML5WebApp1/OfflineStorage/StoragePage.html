@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Storage</title>
+    <script>
+
+        function RunStorageTest() {
+            for (var i in window) {
+                switch (i) {
+                    case "sessionStorage":
+                        document.getElementById("SessionStorage").innerHTML = "Supported";
+                        break;
+                    case "localStorage":
+                        document.getElementById("LocalStorage").innerHTML = "Supported";
+                        break;
+                }
+            }
+            showAll();
+        }
+
+        function setItem(typ) {
+            var name = document.forms.StorageForm.nameTextBox.value;
+            var data = document.forms.StorageForm.dataTextArea.value;
+            if (typ == "local") {
+                localStorage.setItem(name, data);
+            }
+            else if (typ == "session") {
+                sessionStorage.setItem(name, data);
+            }
+            showAll();
+        }
+
+        function getItem(typ) {
+            var name = document.forms.StorageForm.nameTextBox.value;
+            if (typ == "local") {
+                document.forms.StorageForm.dataTextArea.value = localStorage.getItem(name);
+            }
+            else if (typ == "session") {
+                document.forms.StorageForm.dataTextArea.value = sessionStorage.getItem(name);
+            }
+            showAll();
+        }
+
+        function removeItem(typ) {
+            var name = document.forms.StorageForm.nameTextBox.value;
+            if (typ == "local") {
+                localStorage.removeItem(name);
+            }
+            else if (typ == "session") {
+                sessionStorage.removeItem(name);
+            }
+            showAll();
+        }
+
+        function clearStorage(typ) {
+            
+            if (typ == "local") {
+                localStorage.clear();
+            }
+            else if (typ == "session") {
+                sessionStorage.clear();
+            }
+            showAll();
+        }
+
+
+
+        function showAll() {
+            var key = "";
+            var paris = "<tr><th>Type</th><th>Name</th></tr>\n";
+            for (var s in window) {
+                switch (s) {
+                    case "sessionStorage":
+                        for (var i = 0; i < sessionStorage.length; i++) {
+                            key = sessionStorage.key(i);
+                            paris += "<tr><td>Session</td><td>" + key + "</td><td>" +
+                                sessionStorage.getItem(key) + "</td></tr>\n";
+                        }
+                        break;
+                    case "localStorage":
+                        for (var i = 0; i < localStorage.length; i++) {
+                            key = localStorage.key(i);
+                            paris += "<tr><td>Local</td><td>" + key + "</td><td>" +
+                                localStorage.getItem(key) + "</td></tr>\n";
+                        }
+                        break;
+                }
+            }
+            if (paris == "<tr><th>Type</th><th>Name</th></tr>\n") {
+                paris += "<tr><td>empty</td><td>empty</td></tr>";
+            }
+            document.getElementById("ItemsTable").innerHTML = paris;
+        }
+    </script>
+</head>
+<body onload="RunStorageTest()">
+    <div>Session Storage: <span class="Value" id="SessionStorage">Not Supported</span></div>
+    <div>Local Storage: <span class="Value" id="LocalStorage">Not Supported</span></div>
+
+    <form action="/" method="post" id="StorageForm" name="StorageForm">
+        <header>
+            <h1>HTML5 Session and Local Storage....</h1>
+        </header>
+        <section>
+            <p>
+                <label>Value: <textarea style="vertical-align: text-top" cols="20" rows="5" name="dataTextArea" placeholder="type your data here"></textarea></label>
+            </p>
+            <p>
+                <label>Name: <input type="text" name="nameTextBox" /></label>
+            </p>
+        </section>
+        <section>
+            <p>
+                <input type="button" name="getLocalButton" value="Get Local Item" onclick="getItem('local')" />
+                <input type="button" name="setLocalButton" value="Set Local Item" onclick="setItem('local')" />
+                <input type="button" name="removeLocalButton" value="Remove Local Item" onclick="removeItem('local')" />
+            </p>
+            <p>
+                <input type="button" name="getSessionButton" value="Get Session Item" onclick="getItem('session')" />
+                <input type="button" name="setSessionButton" value="Set Session Item" onclick="setItem('session')" />
+                <input type="button" name="removeSessionButton" value="Remove Session Item" onclick="removeItem('session')" />
+            </p>
+        </section>
+
+        <section>
+            <header><h2>Items</h2></header>
+            <table id="ItemsTable"></table>
+
+            <p>
+                <label><input type="button" name="clearLocalStorageButton" value="Clear Local Storage" onclick="clearStorage('local')" /></label>
+            </p>
+            <p>
+                <label><input type="button" name="clearSessionStorageButton" value="Clear Session Storage" onclick="clearStorage('session')" /></label>
+            </p>
+        </section>
+
+
+    </form>
+
+</body>
+</html>
